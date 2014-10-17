@@ -1,6 +1,6 @@
 # object-pointer (NodeJS)
 
-[![Build Status](https://travis-ci.org/boljen/object-pointer.svg)](https://travis-ci.org/boljen/object-pointer)
+[![Build Status](https://travis-ci.org/boljen/node-object-pointer.svg)](https://travis-ci.org/boljen/node-object-pointer)
 
 A class which points to a certain position inside an object and allows you to
 modify everything relative to that position.
