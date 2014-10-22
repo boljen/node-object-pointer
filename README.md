@@ -82,13 +82,19 @@ function.
 ### Pointer.setRoot(root, location)
 
     /**
-     * This points to a certain position inside an object and allows you to read and
-     * modify everything nested inside that position.
+     * This sets the root location of the Pointer
      *
      * @param {Object|Pointer} root - The root object of the Pointer
      * @param {null|string|array} location - The location inside the root object
      */
     Pointer.prototype.setRoot = function(root, rootLocation)
+
+### Pointer.getRoot()
+
+    /**
+     * Returns the root object recursively
+     */
+    Pointer.prototype.getRoot = function()
 
 ### Pointer.setLocation(location)
 

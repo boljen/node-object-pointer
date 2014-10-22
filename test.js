@@ -54,6 +54,15 @@ describe('.Pointer', function() {
 
   });
 
+  describe('getRoot()', function() {
+    it('Should get the root', function() {
+      var newObj = {};
+      var p1 = new Pointer(newObj);
+      var p2 = new Pointer(p1);
+      p2.getRoot().should.eql(newObj);
+    });
+  });
+
   describe('setLocation()', function() {
 
   });

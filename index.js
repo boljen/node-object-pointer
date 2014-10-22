@@ -75,6 +75,17 @@ Pointer.prototype.setRoot = function(obj, loc) {
 };
 
 /**
+ * Returns the root object recursively
+ */
+Pointer.prototype.getRoot = function() {
+  if (this._masterPointer) {
+    return this._root.getRoot();
+  } else {
+    return this._root;
+  }
+};
+
+/**
  * Sets the location inside the master object to which this pointer points.
  * @param {null|string|array} location - The location inside the root object
  */
