@@ -144,11 +144,13 @@ describe('.Pointer', function() {
 
     var o, p;
     beforeEach(function() {
-      o = {dummy:{
-        data: {
-          key: true
+      o = {
+        dummy:{
+          data: {
+            key: true
+          }
         }
-      }};
+      };
       p = new Pointer(o);
     });
 
@@ -157,11 +159,13 @@ describe('.Pointer', function() {
       o.should.eql({});
     });
 
-    it('Should delete thenested location', function() {
+    it('Should delete the nested location', function() {
       p.clear(['dummy', 'data']);
-      o.should.eql({
-        dummy: {}
-      });
+      o.should.eql({});
+      p.set('data', 'test');
+      o.should.eql({data: 'test'})
+      p.clear('data');
+      o.should.eql({});
     });
 
   });

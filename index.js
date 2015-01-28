@@ -19,7 +19,11 @@ inherits(Pointer, EventEmitter);
 
 Pointer.prototype._parseLocation = function(key) {
   if (key instanceof Array) {
-    return key;
+    var r = [];
+    for (var i = 0; i < key.length; i++) {
+      r[i] = key[i];
+    }
+    return r;
   } else if (typeof key === "string") {
     return [key];
   } else if (!key) {
@@ -232,10 +236,15 @@ Pointer.prototype.clear= function(location) {
         delete o[k];
       }
     } else {
+
       var k = location.pop();
       var o = this.get(location);
       if (o && o[k]) {
         delete o[k];
+        for (var key in o) {
+          return;
+        }
+        this.clear(location);
       }
     }
   }
